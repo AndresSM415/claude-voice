@@ -237,6 +237,11 @@ also the default.
 When an app connects, it registers itself and sends you to a sign-in page on
 the bridge. You type the login secret there once.
 - Each sign-in attempt allows five tries.
+- Anyone may register an app, so the bridge keeps no endless list of strangers:
+  an app that never signs in is forgotten after an hour; while twenty such apps
+  wait, registering stops; and while twenty sign-ins are open, a new one is
+  refused until they expire ten minutes later. Apps already signed in are never
+  affected.
 - Access tokens last an hour.
 - Refresh tokens last 90 days and are replaced each time they are used.
 - Tokens are stored only as hashes.
